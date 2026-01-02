@@ -1,35 +1,70 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":disableDependencyDashboard"
-  ],
-  "prHourlyLimit": 4,
-  "prBodyTemplate": "{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}",
-  "semanticCommits": "disabled",
-  "commitMessageTopic": "{{#if (containsString depName 'ghostfolio')}}Ghostfolio{{else}}{{depName}}{{/if}}",
-  "enabledManagers": ["custom.regex", "github-actions"],
-  "packageRules": [
-    {
-      "matchDatasources": ["github-releases"],
-      "automerge": true
-    }
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": "^build.json$",
-      "matchStrings": [
-        "\"ghostfolio/ghostfolio:(?<currentValue>\\d+\\.\\d+\\.\\d+)\"",
-        "\"ghostfolio_version\": \"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
-      ],
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "ghostfolio/ghostfolio"
-    }
-  ],
-  "prBodyColumns": [
-    "Package",
-    "Update",
-    "Change"
-  ]
-}
+name: Automatic Releaser
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'build.json'
+
+jobs:
+  release:
+    name: Sync & Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get Version from build.json
+        id: get_version
+        run: |
+          # Extract version from build.json
+          VERSION=$(jq -r '.args.ghostfolio_version' build.json)
+          echo "Detected version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update config.json
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          # Update version in config.json
+          jq --arg v "$VERSION" '.version = $v' config.json > config.json.tmp && mv config.json.tmp config.json
+
+      - name: Commit & Push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          # Only commit if there are changes
+          if [[ -n $(git status -s config.json) ]]; then
+            git add config.json
+            git commit -m "chore: sync config.json to $VERSION [skip ci]"
+            git push
+          else
+            echo "config.json is already up to date"
+          fi
+        env:
+          VERSION: ${{ steps.get_version.outputs.version }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: v${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+
+  build:
+    name: Build & Publish
+    needs: release
+    uses: ./.github/workflows/publisher.yaml
+    with:
+      version: ${{ needs.release.outputs.version }}
+    permissions:
+      contents: read
+      packages: write
