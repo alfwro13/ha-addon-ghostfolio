@@ -37,6 +37,8 @@ The installation of this add-on is pretty straightforward and no different to in
 1. Check the logs of the add-on to see if everything went well.
 1. Click the `OPEN WEB UI` button to open Ghostfolio.
 
+To monitor your Ghostfolio portfolio performance directly within Home Assistant, use the companion [Ghostfolio Home Assistant Integration](https://github.com/alfwro13/ghostfolio_ha_integration).
+
 ## Acknowledgments
 This addon is maintained by @alfwro13.
 Originally based on the [https://github.com/lildude/ha-addon-ghostfolio](https://github.com/lildude/ha-addon-ghostfolio). 
