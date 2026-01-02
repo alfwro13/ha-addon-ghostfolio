@@ -50,4 +50,4 @@ The installation of this add-on is pretty straightforward and no different to in
 [light]: https://raw.githubusercontent.com/alfwro13/ha-addon-ghostfolio/main/imgs/screenshot-light.png
 [postgres]: https://github.com/matt-FFFFFF/hassio-addon-postgres
 [repo-btn]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
-[sponsor-badge]: https://img.shields.io/badge/Sponsor_Me-%E2%9D%A4-ec6cb9?logo=GitHub
+
