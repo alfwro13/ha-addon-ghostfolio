@@ -1,72 +1,57 @@
-on:
-  workflow_dispatch:
-    inputs:
-      semverIncrement:
-        description: Increment major/minor/patch using values of m/i/p
-        required: true
-        default: i
+name: Automatic Releaser
 
-name: Releaser
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'build.json'
 
 jobs:
   release:
-    name: Create Release
+    name: Sync & Release
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.semver.outputs.semver }}
     permissions:
       contents: write
-      packages: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          path: ghostfolio
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get latest release
-        run: |
-          echo "latest_release=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --silent https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest | jq -r .tag_name | sed s/v// )" >> $GITHUB_ENV
-      - name: Increment semver
-        id: semver
-        uses: matt-FFFFFF/simple-semver@v0.1.1
-        with:
-          semver-input: ${{ env.latest_release }}
-          increment: ${{ github.event.inputs.semverIncrement }}
-      - name: Get Ghostfolio release notes
-        run: |
-          touch CHANGELOG.txt
-          last_release_date=$(gh release list --repo lildude/ha-addon-ghostfolio --limit=1 --json=publishedAt | jq -r '.[].publishedAt')
-          gh pr list --repo lildude/ha-addon-ghostfolio --state=merged --search="Update Ghostfolio in:title closed:>$last_release_date" --limit=1 --json=body --jq '.[].body' | sed -n "/<\/summary>/,/<\/details>/p" | sed '1d;$d' > changelog.tmp
-          if [ -s changelog.tmp ]; then
-            echo "## Ghostfolio Release Notes" > CHANGELOG.txt
-            cat changelog.tmp >> CHANGELOG.txt
-            echo -e "---\n\n## Add-on Release Notes\n\n" >> CHANGELOG.txt
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create tag
-        run: |
-          git config --global user.email "actions.no-reply@github.com"
-          git config --global user.name "GitHub Actions"
-          git tag -a v${{ steps.semver.outputs.semver }} -m 'Release automation'
-          git push --tags
-        working-directory: ${{ github.workspace }}/ghostfolio
-      - name: Create release
-        uses: softprops/action-gh-release@v2.5.0
-        with:
-          tag_name: v${{ steps.semver.outputs.semver }}
-          body_path: CHANGELOG.txt
-          generate_release_notes: true
-          draft: false
-          prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  build:
-    name: Build addon
-    needs: release
-    permissions:
-      contents: read
-      packages: write
-    uses: ./.github/workflows/publisher.yaml
-    with:
-      version: ${{ needs.release.outputs.version }}
+      - name: Get Version from build.json
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.args.ghostfolio_version' build.json)
+          echo "Detected version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update config.json
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          jq --arg v "$VERSION" '.version = $v' config.json > config.json.tmp && mv config.json.tmp config.json
+
+      - name: Commit & Push changes
+        id: commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          if [[ -n $(git status -s config.json) ]]; then
+            git add config.json
+            git commit -m "chore: sync config.json to ${{ steps.get_version.outputs.version }} [skip ci]"
+            git push
+            echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          else
+            echo "config.json is already up to date"
+            echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: v${{ steps.get_version.outputs.version }}
+          target_commitish: ${{ steps.commit.outputs.sha }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
