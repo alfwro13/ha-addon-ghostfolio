@@ -9,8 +9,6 @@ Break down your asset allocation, know your net worth and make solid, data-drive
 
 This addon allows you to run [Ghostfolio][ghostfolio] on your Home Assistant server based on the the official Ghostfolio [docker image][docker].
 
-[![Sponsor me to maintain this addon][sponsor-badge]](https://github.com/sponsors/lildude)
-
 ![Ghostfolio Version][ghostfolio-version]
 ![Ingress][ingres-badge]
 ![Supported Architectures][archs]
@@ -40,16 +38,16 @@ The installation of this add-on is pretty straightforward and no different to in
 1. Check the logs of the add-on to see if everything went well.
 1. Click the `OPEN WEB UI` button to open Ghostfolio.
 
-[addon]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Flildude%2Fha-addons
-[addons-repo]: https://github.com/lildude/ha-addons
+[addon]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falfwro13%2Fha-addon-ghostfolio
+[addons-repo]: https://github.com/alfwro13/ha-addon-ghostfolio
 [alexbelgium-postgres]: https://github.com/alexbelgium/hassio-addons/tree/master/postgres
-[archs]: https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json
-[dark]: https://raw.githubusercontent.com/lildude/ha-addon-ghostfolio/main/imgs/screenshot-dark.png
+[archs]: https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json
+[dark]: https://raw.githubusercontent.com/alfwro13/ha-addon-ghostfolio/main/imgs/screenshot-dark.png
 [docker]: https://hub.docker.com/r/ghostfolio/ghostfolio
-[ghostfolio-version]: https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fbuild.json&query=%24.args.ghostfolio_version
+[ghostfolio-version]: https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fbuild.json&query=%24.args.ghostfolio_version
 [ghostfolio]: https://ghostfol.io
-[ingres-badge]: https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json
-[light]: https://raw.githubusercontent.com/lildude/ha-addon-ghostfolio/main/imgs/screenshot-light.png
+[ingres-badge]: https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json
+[light]: https://raw.githubusercontent.com/alfwro13/ha-addon-ghostfolio/main/imgs/screenshot-light.png
 [postgres]: https://github.com/matt-FFFFFF/hassio-addon-postgres
 [repo-btn]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [sponsor-badge]: https://img.shields.io/badge/Sponsor_Me-%E2%9D%A4-ec6cb9?logo=GitHub
