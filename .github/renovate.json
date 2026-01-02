@@ -1,13 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":disableDependencyDashboard"
   ],
   "prHourlyLimit": 4,
   "prBodyTemplate": "{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}",
   "semanticCommits": "disabled",
   "commitMessageTopic": "{{#if (containsString depName 'ghostfolio')}}Ghostfolio{{else}}{{depName}}{{/if}}",
   "enabledManagers": ["custom.regex", "github-actions"],
+  "packageRules": [
+    {
+      "matchDatasources": ["github-releases"],
+      "automerge": true
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
