@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'build.json'
+  workflow_dispatch: # Allows manual triggering if needed
 
 jobs:
   release:
@@ -36,8 +37,7 @@ jobs:
           VERSION=${{ steps.get_version.outputs.version }}
           echo "Fetching release notes for Ghostfolio $VERSION..."
           
-          # Try to get notes for 'vX.X.X' (standard) or just 'X.X.X'
-          # We grab the body of the release from the official ghostfolio repo
+          # Try to get notes for 'vX.X.X' or 'X.X.X'
           NOTES=$(gh release view "v$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || gh release view "$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || echo "No changelog found in upstream repository.")
           
           echo "## Ghostfolio $VERSION Release Notes" > release_notes.md
