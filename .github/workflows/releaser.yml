@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -25,6 +27,25 @@ jobs:
           VERSION=$(jq -r '.args.ghostfolio_version' build.json)
           echo "Detected version: $VERSION"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Fetch Upstream Changelog
+        id: changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          echo "Fetching release notes for Ghostfolio $VERSION..."
+          
+          # Try to get notes for 'vX.X.X' (standard) or just 'X.X.X'
+          # We grab the body of the release from the official ghostfolio repo
+          NOTES=$(gh release view "v$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || gh release view "$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || echo "No changelog found in upstream repository.")
+          
+          echo "## Ghostfolio $VERSION Release Notes" > release_notes.md
+          echo "" >> release_notes.md
+          echo "$NOTES" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "---" >> release_notes.md
+          echo "*This release was automatically generated based on the official Ghostfolio update.*" >> release_notes.md
 
       - name: Update config.json
         run: |
@@ -51,7 +72,17 @@ jobs:
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: v${{ steps.get_version.outputs.version }}
+          body_path: release_notes.md
           target_commitish: ${{ steps.commit.outputs.sha }}
           draft: false
           prerelease: false
-          generate_release_notes: true
+
+  build:
+    name: Build & Publish
+    needs: release
+    uses: ./.github/workflows/publisher.yaml
+    with:
+      version: ${{ needs.release.outputs.version }}
+    permissions:
+      contents: read
+      packages: write
