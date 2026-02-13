@@ -47,6 +47,21 @@ jobs:
           echo "---" >> release_notes.md
           echo "*This release was automatically generated based on the official Ghostfolio update.*" >> release_notes.md
 
+      - name: Update local CHANGELOG.md
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          # Create header for this version
+          echo -e "# $VERSION\n" > current_changelog.md
+          # Append the notes we just fetched
+          cat release_notes.md >> current_changelog.md
+          echo -e "\n---\n" >> current_changelog.md
+          
+          # Prepend new notes to the existing CHANGELOG.md (if it exists)
+          if [ -f CHANGELOG.md ]; then
+            cat CHANGELOG.md >> current_changelog.md
+          fi
+          mv current_changelog.md CHANGELOG.md
+
       - name: Update config.json
         run: |
           VERSION=${{ steps.get_version.outputs.version }}
@@ -57,13 +72,14 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          if [[ -n $(git status -s config.json) ]]; then
-            git add config.json
-            git commit -m "chore: sync config.json to ${{ steps.get_version.outputs.version }} [skip ci]"
+          # Add CHANGELOG.md to the git track list
+          git add config.json CHANGELOG.md 
+          if [[ -n $(git status -s) ]]; then
+            git commit -m "chore: sync config and changelog to ${{ steps.get_version.outputs.version }} [skip ci]"
             git push
             echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           else
-            echo "config.json is already up to date"
+            echo "config and changelog are already up to date"
             echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           fi
 
