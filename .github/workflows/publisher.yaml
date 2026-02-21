@@ -48,6 +48,4 @@ jobs:
             --${{ matrix.arch }} \
             --version ${{ env.latest_release }} \
             --target /data/ \
-            --docker-user ${{ github.repository_owner }} \
-            --docker-password ${{ secrets.GITHUB_TOKEN }} \
             --addon
