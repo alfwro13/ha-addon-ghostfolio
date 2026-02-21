@@ -45,4 +45,4 @@ jobs:
 
       - name: Image labels
         run: |
-          docker inspect ghcr.io/lildude/ha-addon-ghostfolio-${{ matrix.arch }} --format='{{json .Config.Labels}}' | jq
+          docker inspect ghcr.io/alfwro13/ha-addon-ghostfolio-${{ matrix.arch }} --format='{{json .Config.Labels}}' | jq
