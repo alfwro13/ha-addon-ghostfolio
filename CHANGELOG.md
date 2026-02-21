@@ -1,3 +1,33 @@
+# 2.241.0
+
+## Ghostfolio 2.241.0 Release Notes
+
+### Changed
+
+- Improved the usability of the portfolio summary tab on the home page in the _Presenter View_
+- Refreshed the cryptocurrencies list
+- Improved the language localization for German (`de`)
+- Improved the language localization for Spanish (`es`)
+
+### Fixed
+
+- Fixed an issue with `balanceInBaseCurrency` of the accounts in the value redaction interceptor for the impersonation mode
+- Fixed an issue with `comment` of the accounts in the value redaction interceptor for the impersonation mode
+- Fixed an issue with `dividendInBaseCurrency` of the accounts in the value redaction interceptor for the impersonation mode
+- Fixed an issue with `interestInBaseCurrency` of the accounts in the value redaction interceptor for the impersonation mode
+- Fixed an issue with `value` of the accounts in the value redaction interceptor for the impersonation mode
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @slegarraga
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.240.0
 
 ## Ghostfolio 2.240.0 Release Notes
