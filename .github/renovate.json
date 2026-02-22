@@ -4,7 +4,7 @@
     "config:recommended",
     ":disableDependencyDashboard"
   ],
-  "platformAutomerge": false,
+  "platformAutomerge": true,
   "automergeStrategy": "squash",
   "prHourlyLimit": 4,
   "prBodyTemplate": "{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}",
