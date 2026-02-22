@@ -1,3 +1,21 @@
+# 2.242.0
+
+## Ghostfolio 2.242.0 Release Notes
+
+### Changed
+
+- Changed the account field to optional in the create or update activity dialog
+
+### Fixed
+
+- Fixed a validation issue for valuables used in the create and import activity logic
+- Fixed the page size for presets in the historical market data table of the admin control panel
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.241.0
 
 ## Ghostfolio 2.241.0 Release Notes
