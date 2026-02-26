@@ -16,6 +16,24 @@
 
 ---
 
+# 2.243.0
+
+## Ghostfolio 2.243.0 Release Notes
+
+### Changed
+
+- Improved the language localization for Chinese (`zh`)
+- Upgraded `nestjs` from version `11.1.8` to `11.1.14`
+
+### Fixed
+
+- Fixed an issue when creating activities of type `FEE`, `INTEREST` or `LIABILITY`
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.242.0
 
 ## Ghostfolio 2.242.0 Release Notes
