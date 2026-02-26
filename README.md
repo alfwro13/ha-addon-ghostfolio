@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Ghostfolio
+# Home Assistant App: Ghostfolio
 
 Manage your wealth like a boss.
 
@@ -7,7 +7,7 @@ Manage your wealth like a boss.
 [Ghostfolio][ghostfolio] is a privacy-first, open source dashboard for your personal finances.
 Break down your asset allocation, know your net worth and make solid, data-driven investment decisions.
 
-This addon allows you to run [Ghostfolio][ghostfolio] on your Home Assistant server based on the the official Ghostfolio [docker image][docker].
+This app allows you to run [Ghostfolio][ghostfolio] on your Home Assistant server based on the the official Ghostfolio [docker image][docker].
 
 ![Ghostfolio Version][ghostfolio-version]
 ![Supported Architectures][archs]
@@ -23,18 +23,18 @@ I recommend using the [PostgreSQL add-on][alexbelgium-postgres] from @alexbelgiu
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and no different to installing any other Home Assistant add-on.
+The installation of this App is pretty straightforward and no different to installing any other Home Assistant app.
 
-1. Add my [add-ons repository][addons-repo] to Home Assistant or click the button below to open my add-on repository on your Home Assistant instance.
+1. Add my [add-ons repository][addons-repo] to Home Assistant or click the button below to open my app repository on your Home Assistant instance.
 
    [![Open add-on repo on your Home Assistant instance][repo-btn]][addon]
 
-1. Install this add-on.
-1. Install the PostgreSQL add-on and configure and start it, if you wish to use this add-on.
+1. Install this app.
+1. Install the PostgreSQL app and configure and start it, if you wish to use this app.
 1. Enter your PostgreSQL configuration information.
 1. Click the `Save` button to store your configuration.
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
+1. Start the app.
+1. Check the logs of the app to see if everything went well.
 1. Click the `OPEN WEB UI` button to open Ghostfolio.
 
 To monitor your Ghostfolio portfolio performance directly within Home Assistant, use the companion [Ghostfolio Home Assistant Integration](https://github.com/alfwro13/ghostfolio_ha_integration).
