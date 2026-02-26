@@ -19,13 +19,13 @@ This app allows you to run [Ghostfolio][ghostfolio] on your Home Assistant serve
 ## Requirements
 
 Ghostfolio needs a PostgreSQL database.
-I recommend using the [PostgreSQL add-on][alexbelgium-postgres] from @alexbelgium's repository if you aren't already using Postgres.
+I recommend using the [PostgreSQL App][alexbelgium-postgres] from @alexbelgium's repository if you aren't already using Postgres.
 
 ## Installation
 
 The installation of this App is pretty straightforward and no different to installing any other Home Assistant app.
 
-1. Add my [add-ons repository][addons-repo] to Home Assistant or click the button below to open my app repository on your Home Assistant instance.
+1. Add my [app repository][addons-repo] to Home Assistant or click the button below to open my app repository on your Home Assistant instance.
 
    [![Open add-on repo on your Home Assistant instance][repo-btn]][addon]
 
