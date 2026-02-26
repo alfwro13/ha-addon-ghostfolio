@@ -13,6 +13,6 @@
     "org.opencontainers.image.documentation": "https://github.com/alfwro13/ha-addon-ghostfolio/blob/main/DOCS.md",
     "org.opencontainers.image.licenses": "MIT",
     "org.opencontainers.image.source": "https://github.com/alfwro13/ha-addon-ghostfolio/",
-    "org.opencontainers.image.title": "Home Assistant Add-on: Ghostolio"
+    "org.opencontainers.image.title": "Home Assistant App: Ghostolio"
   }
 }
