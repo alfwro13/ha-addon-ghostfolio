@@ -1,3 +1,29 @@
+# 2.244.0
+
+## Ghostfolio 2.244.0 Release Notes
+
+### Changed
+
+- Improved the usability of the asset profile details dialog in the admin control panel for currencies
+- Removed the deprecated static portfolio analysis rule: _Fees_ (Fee Ratio)
+- Refactored queries in the data provider service to use Prisma’s safe query methods
+
+### Fixed
+
+- Fixed an exception by adding a fallback for missing market price values on the _X-ray_ page
+
+### Special Thanks
+
+- @agarg5
+- @dtslvr
+- @KenTandrian
+- Aidan Crinion
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.243.0
 
 ## Ghostfolio 2.243.0 Release Notes
