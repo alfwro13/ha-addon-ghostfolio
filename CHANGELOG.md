@@ -1,3 +1,33 @@
+# 2.245.0
+
+## Ghostfolio 2.245.0 Release Notes
+
+### Changed
+
+- Excluded the scraper configuration from the import and export functionality
+- Excluded the symbol mapping from the import and export functionality
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for Italian (`it`)
+- Improved the language localization for Spanish (`es`)
+
+### Fixed
+
+- Resolved the data source transformation in the errors of the performance endpoint
+- Resolved the data source transformation in the export functionality
+
+### Special Thanks
+
+- @arielpons
+- @dtslvr
+- @Erwin-N
+- @ratrarity
+- @riccobelli
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.244.0
 
 ## Ghostfolio 2.244.0 Release Notes
