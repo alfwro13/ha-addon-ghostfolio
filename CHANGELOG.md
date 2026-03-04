@@ -1,3 +1,22 @@
+# 2.247.0
+
+## Ghostfolio 2.247.0 Release Notes
+
+### Changed
+
+- Upgraded `yahoo-finance2` from version `3.13.0` to `3.13.2`
+
+### Special Thanks
+
+- @dtslvr
+- @gadicc
+- @lmaced0
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.246.0
 
 ## Ghostfolio 2.246.0 Release Notes
