@@ -1,3 +1,28 @@
+# 2.246.0
+
+## Ghostfolio 2.246.0 Release Notes
+
+### Changed
+
+- Removed the deprecated `committedFunds` from the summary of the portfolio details endpoint
+- Upgraded `Nx` from version `22.4.5` to `22.5.3`
+
+### Fixed
+
+- Fixed an issue where the apply and reset filter buttons remained disabled in the assistant
+
+### Special Thanks
+
+- @DarkwinngDuck
+- @dtslvr
+- @pswitchy
+- @slegarraga
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.245.0
 
 ## Ghostfolio 2.245.0 Release Notes
