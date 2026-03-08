@@ -1,3 +1,37 @@
+# 2.248.0
+
+## Ghostfolio 2.248.0 Release Notes
+
+### Added
+
+- Added support for column sorting to the data providers management of the admin control panel
+
+### Changed
+
+- Included asset profile data in the endpoint `GET api/v1/portfolio/holdings`
+- Included asset profile data in the holdings of the public page
+- Reused the value component in the platform management of the admin control panel
+- Reused the value component in the tag management of the admin control panel
+- Deprecated the `api/v1/order` endpoints in favor of the `api/v1/activities` endpoints
+- Upgraded `jsonpath` from version `1.1.1` to `1.2.1`
+
+### Fixed
+
+- Fixed an issue in the _FIRE_ calculator to correctly calculate the projected total amount
+
+### Special Thanks
+
+- @DarkwinngDuck
+- @DavidReque
+- @dtslvr
+- @KenTandrian
+- @WinnCook
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.247.0
 
 ## Ghostfolio 2.247.0 Release Notes
