@@ -1,3 +1,33 @@
+# 2.249.0
+
+## Ghostfolio 2.249.0 Release Notes
+
+### Added
+
+- Integrated _Bull Dashboard_ for a detailed jobs queue view in the admin control panel (experimental)
+- Added a debounce to the `PortfolioChangedListener` and `AssetProfileChangedListener` to minimize redundant _Redis_ and database operations
+
+### Changed
+
+- Improved the _Storybook_ stories of the value component
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for German (`de`)
+- Upgraded `class-validator` from version `0.14.3` to `0.15.1`
+
+### Fixed
+
+- Fixed false _Redis_ health check failures by using unique keys and increasing the timeout to 5s
+
+### Special Thanks
+
+- @dtslvr
+- @Erwin-N
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.248.0
 
 ## Ghostfolio 2.248.0 Release Notes
