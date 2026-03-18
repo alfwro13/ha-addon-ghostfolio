@@ -1,3 +1,43 @@
+# 2.250.0
+
+## Ghostfolio 2.250.0 Release Notes
+
+### Added
+
+- Added support for specific calendar year date ranges (`2025`, `2024`, `2023`, etc.) on the portfolio activities page
+
+### Changed
+
+- Consolidated the sign-out logic within the user service to unify cookie, state and token clearance
+- Improved the language localization for Polish (`pl`)
+- Upgraded `@ionic/angular` from version `8.7.3` to `8.8.1`
+- Upgraded `replace-in-file` from version `8.3.0` to `8.4.0`
+- Upgraded `svgmap` from version `2.14.0` to `2.19.2`
+- Pinned the _Node.js_ version in the _Build code_ _GitHub Action_ to ensure environment consistency for tests
+
+### Fixed
+
+- Fixed an issue with the detection of the thousand separator for the `de-CH` locale
+- Fixed an issue in the _Storybook_ stories of the symbol autocomplete component caused by a circular dependency
+
+### Special Thanks
+
+- @Akd11111
+- @AyushMishraa
+- @dtslvr
+- @Erwin-N
+- @gilangjavier
+- @JiwaniZakir
+- @KenTandrian
+- @mvanhorn
+- @NathanDrake2406
+- @WinnCook
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.249.0
 
 ## Ghostfolio 2.249.0 Release Notes
