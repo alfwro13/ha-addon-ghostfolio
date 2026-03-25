@@ -1,3 +1,37 @@
+# 2.251.0
+
+## Ghostfolio 2.251.0 Release Notes
+
+### Added
+
+- Added the quantity column to the holdings table of the portfolio holdings page
+
+### Changed
+
+- Hardened the endpoint `DELETE /api/v1/auth-device/:id` by improving the user validation
+- Improved the allocations by ETF holding on the allocations page by refining the grouping of the same assets with diverging names (experimental)
+- Improved the language localization for Polish (`pl`)
+- Upgraded `@trivago/prettier-plugin-sort-imports` from version `5.2.2` to `6.0.2`
+
+### Fixed
+
+- Fixed an issue by adding a missing guard in the public access for portfolio sharing
+
+### Special Thanks
+
+- @BoB5231
+- @dtslvr
+- @Erwin-N
+- @KenTandrian
+- @mvanhorn
+- @NathanDrake2406
+- @omkarg01
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.250.0
 
 ## Ghostfolio 2.250.0 Release Notes
