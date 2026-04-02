@@ -42,7 +42,6 @@ jobs:
         uses: home-assistant/builder/actions/prepare-multi-arch-matrix@2026.03.2
         with:
           architectures: ${{ env.ARCHITECTURES }}
-          image: ${{ env.IMAGE_NAME }}
 
   build:
     name: Build add-on
@@ -68,7 +67,7 @@ jobs:
         uses: home-assistant/builder/actions/build-image@2026.03.2
         with:
           arch: ${{ matrix.arch }}
-          image: ${{ matrix.image }}
+          image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
           version: ${{ needs.init.outputs.version }}
           push: true
 
