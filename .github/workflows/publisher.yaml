@@ -10,29 +10,52 @@ on:
         required: false
         type: string
 
+env:
+  ARCHITECTURES: '["amd64", "aarch64"]'
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/ha-addon-ghostfolio
+
 jobs:
-  publish:
-    name: Publish
+  init:
+    name: Initialize build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - name: Get version
+        id: version
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+          elif [ -n "${{ github.event.release.tag_name }}" ]; then
+            echo "version=$(echo ${{ github.event.release.tag_name }} | sed s/v//)" >> $GITHUB_OUTPUT
+          else
+            echo "version=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --silent https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest | jq -r .tag_name | sed s/v// )" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get build matrix
+        id: matrix
+        uses: home-assistant/builder/actions/prepare-multi-arch-matrix@2026.03.2
+        with:
+          architectures: ${{ env.ARCHITECTURES }}
+          image: ${{ env.IMAGE_NAME }}
+
+  build:
+    name: Build add-on
+    needs: init
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     strategy:
-      matrix:
-        arch: ["amd64", "aarch64"]
-
+      matrix: ${{ fromJSON(needs.init.outputs.matrix) }}
     steps:
-      - name: Checkout the repository
+      - name: Check out repository
         uses: actions/checkout@v6.0.2
-
-      - name: Get version
-        run: |
-          version=${{ inputs.version }}
-          if [ -n "$version" ]; then
-            echo "latest_release=$version" >> $GITHUB_ENV
-          else
-            echo "latest_release=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --silent https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest | jq -r .tag_name | sed s/v// )" >> $GITHUB_ENV
-          fi
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v4.1.0
@@ -41,11 +64,32 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and publish
-        uses: home-assistant/builder@2026.03.2
+      - name: Build and push add-on
+        uses: home-assistant/builder/actions/build-image@2026.03.2
         with:
-          args: |
-            --${{ matrix.arch }} \
-            --version ${{ env.latest_release }} \
-            --target /data/ \
-            --addon
+          architecture: ${{ matrix.arch }}
+          image: ${{ matrix.image }}
+          version: ${{ needs.init.outputs.version }}
+          push: true
+
+  publish:
+    name: Publish multi-arch manifest
+    needs: [init, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v4.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Publish multi-arch manifest
+        uses: home-assistant/builder/actions/publish-multi-arch-manifest@2026.03.2
+        with:
+          architectures: ${{ env.ARCHITECTURES }}
+          image: ${{ env.IMAGE_NAME }}
+          version: ${{ needs.init.outputs.version }}
