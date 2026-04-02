@@ -56,13 +56,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6.0.2
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v4.1.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build and push add-on
         uses: home-assistant/builder/actions/build-image@2026.03.2
         with:
@@ -70,6 +63,8 @@ jobs:
           image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
           version: ${{ needs.init.outputs.version }}
           push: true
+          container-registry-username: ${{ github.repository_owner }}
+          container-registry-password: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
     name: Publish multi-arch manifest
@@ -79,16 +74,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v4.1.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          
       - name: Publish multi-arch manifest
         uses: home-assistant/builder/actions/publish-multi-arch-manifest@2026.03.2
         with:
           architectures: ${{ env.ARCHITECTURES }}
           image: ${{ env.IMAGE_NAME }}
           version: ${{ needs.init.outputs.version }}
+          container-registry-username: ${{ github.repository_owner }}
+          container-registry-password: ${{ secrets.GITHUB_TOKEN }}
