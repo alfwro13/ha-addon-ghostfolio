@@ -7,7 +7,6 @@ on:
     paths:
       - build.yaml
       - config.yaml
-      - build.json
       - config.json
       - Dockerfile
       - rootfs/**
@@ -17,32 +16,43 @@ on:
     paths:
       - build.yaml
       - config.yaml
-      - build.json
       - config.json
       - Dockerfile
       - rootfs/**
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: Build add-on
-    strategy:
-      matrix:
-        arch: ["amd64", "aarch64"]
+env:
+  ARCHITECTURES: '["amd64", "aarch64"]'
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/ha-addon-ghostfolio
 
+jobs:
+  init:
+    name: Initialize build
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - name: Get build matrix
+        id: matrix
+        uses: home-assistant/builder/actions/prepare-multi-arch-matrix@2026.03.2
+        with:
+          architectures: ${{ env.ARCHITECTURES }}
+          image: ${{ env.IMAGE_NAME }}
+
+  build:
+    name: Build add-on
+    needs: init
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.init.outputs.matrix) }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6.0.2
 
       - name: Build add-on
-        uses: home-assistant/builder@2026.03.2
+        uses: home-assistant/builder/actions/build-image@2026.03.2
         with:
-          args: |
-            --test \
-            --${{ matrix.arch }} \
-            --target /data/ \
-            --addon
-
-      - name: Image labels
-        run: |
-          docker inspect ghcr.io/alfwro13/ha-addon-ghostfolio-${{ matrix.arch }} --format='{{json .Config.Labels}}' | jq
+          architecture: ${{ matrix.arch }}
+          image: ${{ matrix.image }}
+          version: test
+          push: false
