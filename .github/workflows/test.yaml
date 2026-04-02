@@ -37,6 +37,7 @@ jobs:
         uses: home-assistant/builder/actions/prepare-multi-arch-matrix@2026.03.2
         with:
           architectures: ${{ env.ARCHITECTURES }}
+          image: ${{ env.IMAGE_NAME }}
 
   build:
     name: Build add-on
@@ -48,14 +49,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6.0.2
 
-      # THIS IS THE NEW FIX: Emulate ARM processor architecture
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v4
+        uses: docker/setup-qemu-action@v3
 
       - name: Build add-on
         uses: home-assistant/builder/actions/build-image@2026.03.2
         with:
           arch: ${{ matrix.arch }}
-          image: ${{ env.IMAGE_NAME }}-${{ matrix.arch }}
+          image: ${{ matrix.image }}
           version: test
+          image-tags: test
           push: false
