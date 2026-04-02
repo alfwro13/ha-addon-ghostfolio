@@ -1,4 +1,5 @@
-ARG BUILD_FROM
+ARG ghostfolio_version="2.252.0"
+ARG BUILD_FROM="ghostfolio/ghostfolio:${ghostfolio_version}"
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH
@@ -16,7 +17,7 @@ ENV \
 USER root
 RUN apt-get update && apt-get install -y \
         jq \
-        redis \
+        redis-server \
         xz-utils \
         nginx \
         ca-certificates \
@@ -29,9 +30,9 @@ RUN apt-get update && apt-get install -y \
     && mkdir -p /tmp/bashio \
     && curl -Ls "https://github.com/hassio-addons/bashio/archive/v${BASHIO_VERSION}.tar.gz" | tar xz --strip 1 -C /tmp/bashio \
     && mv /tmp/bashio/lib /usr/lib/bashio \
-    && apt purge -y xz-utils \
+    && apt-get purge -y xz-utils \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
-    && rm -rf /var/lib/apt/lists/* /tmp/* 
+    && rm -rf /var/lib/apt/lists/* /tmp/*
 
 COPY rootfs /
 USER node
@@ -43,3 +44,12 @@ HEALTHCHECK \
     --retries=5 \
     --timeout=5s \
     CMD curl --fail "http://localhost:3333/api/v1/health" &>/dev/null || exit 1
+
+LABEL \
+    maintainer="Alfwro13 (https://github.com/alfwro13)" \
+    org.opencontainers.image.authors="Alfwro13 (https://github.com/alfwro13)" \
+    org.opencontainers.image.description="Privacy-first, open source dashboard for your personal finances." \
+    org.opencontainers.image.documentation="https://github.com/alfwro13/ha-addon-ghostfolio/blob/main/DOCS.md" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.source="https://github.com/alfwro13/ha-addon-ghostfolio/" \
+    org.opencontainers.image.title="Home Assistant App: Ghostfolio"

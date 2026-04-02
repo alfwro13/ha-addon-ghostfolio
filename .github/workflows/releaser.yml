@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'build.json'
-  workflow_dispatch: # Allows manual triggering if needed
+      - 'Dockerfile'
+  workflow_dispatch:
 
 jobs:
   release:
@@ -22,10 +22,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get Version from build.json
+      - name: Get Version from Dockerfile
         id: get_version
         run: |
-          VERSION=$(jq -r '.args.ghostfolio_version' build.json)
+          VERSION=$(grep '^ARG ghostfolio_version=' Dockerfile | cut -d'"' -f2)
           echo "Detected version: $VERSION"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
