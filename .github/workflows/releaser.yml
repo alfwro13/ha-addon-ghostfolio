@@ -13,6 +13,9 @@ permissions:
   packages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   release:
     name: Sync & Release
@@ -43,7 +46,6 @@ jobs:
           VERSION=${{ steps.get_version.outputs.version }}
           echo "Fetching release notes for Ghostfolio $VERSION..."
           
-          # Try to get notes for 'vX.X.X' or 'X.X.X'
           NOTES=$(gh release view "v$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || gh release view "$VERSION" --repo ghostfolio/ghostfolio --json body --jq '.body' 2>/dev/null || echo "No changelog found in upstream repository.")
           
           echo "## Ghostfolio $VERSION Release Notes" > release_notes.md
@@ -56,13 +58,10 @@ jobs:
       - name: Update local CHANGELOG.md
         run: |
           VERSION=${{ steps.get_version.outputs.version }}
-          # Create header for this version
           echo -e "# $VERSION\n" > current_changelog.md
-          # Append the notes we just fetched
           cat release_notes.md >> current_changelog.md
           echo -e "\n---\n" >> current_changelog.md
           
-          # Prepend new notes to the existing CHANGELOG.md (if it exists)
           if [ -f CHANGELOG.md ]; then
             cat CHANGELOG.md >> current_changelog.md
           fi
@@ -78,7 +77,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          # Add CHANGELOG.md to the git track list
           git add config.json CHANGELOG.md 
           if [[ -n $(git status -s) ]]; then
             git commit -m "chore: sync config and changelog to ${{ steps.get_version.outputs.version }} [skip ci]"
@@ -108,3 +106,4 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
