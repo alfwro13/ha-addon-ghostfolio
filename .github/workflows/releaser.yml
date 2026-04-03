@@ -8,6 +8,11 @@ on:
       - 'Dockerfile'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
 jobs:
   release:
     name: Sync & Release
