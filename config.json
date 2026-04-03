@@ -43,5 +43,5 @@
       }
     ]
   },
-  "image": "ghcr.io/alfwro13/ha-addon-ghostfolio-{arch}"
+  "image": "ghcr.io/alfwro13/ha-addon-ghostfolio"
 }
