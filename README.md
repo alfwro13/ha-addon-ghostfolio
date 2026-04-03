@@ -50,7 +50,7 @@ Originally based on the [https://github.com/lildude/ha-addon-ghostfolio](https:/
 [archs]: https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json
 [dark]: https://raw.githubusercontent.com/alfwro13/ha-addon-ghostfolio/main/imgs/screenshot-dark.png
 [docker]: https://hub.docker.com/r/ghostfolio/ghostfolio
-[ghostfolio-version]: https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fbuild.json&query=%24.args.ghostfolio_version
+[ghostfolio-version]: https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falfwro13%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json&query=%24.version
 [ghostfolio]: https://ghostfol.io
 [light]: https://raw.githubusercontent.com/alfwro13/ha-addon-ghostfolio/main/imgs/screenshot-light.png
 [postgres]: https://github.com/matt-FFFFFF/hassio-addon-postgres
