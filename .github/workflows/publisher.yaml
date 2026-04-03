@@ -81,13 +81,13 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
     steps:
       - name: Publish multi-arch manifest
         uses: home-assistant/builder/actions/publish-multi-arch-manifest@2026.03.2
         with:
           architectures: ${{ env.ARCHITECTURES }}
-          image: ${{ env.IMAGE_NAME }}
-          version: ${{ needs.init.outputs.version }}
+          image-name: ${{ env.IMAGE_NAME }}
           image-tags: |
             ${{ needs.init.outputs.version }}
             latest
