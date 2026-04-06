@@ -1,3 +1,39 @@
+# 2.253.0
+
+## Ghostfolio 2.253.0 Release Notes
+
+### Added
+
+- Added support for filtering by activity type on the activities page (experimental)
+- Extended the admin control panel by adding a copy-to-clipboard button for the application version
+
+### Changed
+
+- Extended the terms of service for the _Ghostfolio_ SaaS (cloud) to include _Paid Plans_ and _Refund Policy_
+- Upgraded `prisma` from version `6.19.0` to `6.19.3`
+
+### Fixed
+
+- Fixed the allocations by account chart on the allocations page in the _Presenter View_
+- Fixed the allocations by asset class chart on the allocations page in the _Presenter View_
+- Fixed the allocations by currency chart on the allocations page in the _Presenter View_
+- Fixed the allocations by ETF provider chart on the allocations page in the _Presenter View_
+- Fixed the allocations by platform chart on the allocations page in the _Presenter View_
+
+### Special Thanks
+
+- @Airthee
+- @DavidReque
+- @dtslvr
+- @Erwin-N
+- @KenTandrian
+- @tmchow
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.252.0
 
 ## Ghostfolio 2.252.0 Release Notes
