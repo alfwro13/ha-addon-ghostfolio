@@ -1,3 +1,35 @@
+# 2.254.0
+
+## Ghostfolio 2.254.0 Release Notes
+
+### Added
+
+- Added loan as an asset sub class
+
+### Changed
+
+- Extended the asset profile details dialog in the admin control panel to support editing countries for all asset types
+- Extended the asset profile details dialog in the admin control panel to support editing sectors for all asset types
+- Migrated the data collection for the _Open Startup_ (`/open`) page to the queue design pattern
+- Improved the language localization for German (`de`)
+- Upgraded `lodash` from version `4.17.23` to `4.18.1`
+
+### Fixed
+
+- Improved the style of the activity type component
+
+### Special Thanks
+
+- @dtslvr
+- @Erwin-N
+- @KenTandrian
+- @omkarg01
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 2.253.0
 
 ## Ghostfolio 2.253.0 Release Notes
