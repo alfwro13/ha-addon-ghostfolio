@@ -1,3 +1,9 @@
+# v3.0.0.1 - Startup Crash Fix
+
+### Fixed:
+
+Resolved an issue where the add-on would enter a continuous crash loop upon updating to Ghostfolio 3.0.0.
+
 # 3.0.0
 
 ## Ghostfolio 3.0.0 Release Notes
