@@ -1,3 +1,24 @@
+# 3.0.1
+
+## Ghostfolio 3.0.1 Release Notes
+
+### Changed
+
+- Moved the copy-to-clipboard button for the ISIN number in the holding detail dialog from experimental to general availability
+- Moved the copy-to-clipboard button for the symbol in the holding detail dialog from experimental to general availability
+- Improved the styling of buttons and input fields across various components
+- Upgraded `prettier` from version `3.8.2` to `3.8.3`
+
+### Fixed
+
+- Fixed the cash label in the holdings table of the portfolio holdings page
+- Fixed the cash label in the holdings table of the public page
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # v3.0.0.1 - Startup Crash Fix
 
 ### Fixed:
