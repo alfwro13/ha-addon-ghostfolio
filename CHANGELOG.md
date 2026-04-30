@@ -1,3 +1,35 @@
+# 3.1.0
+
+## Ghostfolio 3.1.0 Release Notes
+
+### Added
+
+- Added the _EuroAlternative_ logo to the logo carousel on the landing page
+- Integrated a theme switcher into _Storybook_ to support toggling between the light and dark mode
+
+### Changed
+
+- Modernized the layout of the overview tab in the admin control panel
+- Improved the styling of the paginator across various table components
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Optimized the spacing of the logo in the header
+- Fixed the _Storybook_ setup by resolving missing `@angular/material` styles
+
+### Special Thanks
+
+- @DavidReque
+- @dtslvr
+- @lechtidu56
+- @mvanhorn
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.0.1
 
 ## Ghostfolio 3.0.1 Release Notes
