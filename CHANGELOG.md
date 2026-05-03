@@ -1,3 +1,31 @@
+# 3.2.0
+
+## Ghostfolio 3.2.0 Release Notes
+
+### Added
+
+- Added `angular-developer` skills
+
+### Changed
+
+- Harmonized the unit styling in the value component
+- Upgraded `stripe` from version `20.4.1` to `21.0.1`
+
+### Fixed
+
+- Resolved a validation error with an empty URL in the asset profile details dialog of the admin control panel
+- Resolved an issue where charts and components defaulted to _Roboto_ instead of the preconfigured _Inter_ font family
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.1.0
 
 ## Ghostfolio 3.1.0 Release Notes
