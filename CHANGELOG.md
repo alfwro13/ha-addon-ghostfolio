@@ -1,3 +1,33 @@
+# 3.5.0
+
+## Ghostfolio 3.5.0 Release Notes
+
+### Added
+
+- Configured the `min-release-age` in `.npmrc`
+
+### Changed
+
+- Removed the deprecated attributes (`assetClass`, `countries`, `currency`, `dataSource`, `name`, `sectors`, `symbol` and `url`) from the holdings of the public portfolio endpoint response
+- Removed the deprecated `api/v1/order` endpoints
+- Upgraded `@keyv/redis` from version `4.4.0` to `5.1.6`
+
+### Fixed
+
+- Fixed a layout regression that caused a double scrollbar on pages without tabs
+- Resolved an issue with missing cash positions caused by an incorrect data source
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @Trillianti
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.4.0
 
 ## Ghostfolio 3.4.0 Release Notes
