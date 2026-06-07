@@ -1,3 +1,42 @@
+# 3.8.0
+
+## Ghostfolio 3.8.0 Release Notes
+
+### Added
+
+- Added an automatic refresh every 30 seconds to the users table in the admin control panel
+
+### Changed
+
+- Harmonized the sector names across the data providers
+- Localized the country names
+- Localized the sector names
+- Centralized the asset profile override logic for manual adjustments
+- Improved the styling in the user detail dialog of the admin control panel’s users section
+- Prevented the deletion of asset profiles that are currently in use
+- Ensured market data is correctly removed when an asset profile with no remaining activities is deleted
+- Refactored the backend logging to use the instance-based `Logger`
+- Improved the language localization for German (`de`)
+- Improved the language localization for Ukrainian (`uk`)
+
+### Fixed
+
+- Prevented the floating action button from overlapping the paginator on mobile
+- Fixed an issue where the asset profile override (asset class and asset sub class) was not applied to the data enhancers when gathering asset profiles
+- Fixed a layout issue in the asset profile dialog of the admin control panel by truncating long titles
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @Punith1117
+- @x52-dev
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.7.0
 
 ## Ghostfolio 3.7.0 Release Notes
