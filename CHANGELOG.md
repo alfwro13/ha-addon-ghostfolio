@@ -1,3 +1,25 @@
+# 3.10.0
+
+## Ghostfolio 3.10.0 Release Notes
+
+### Changed
+
+- Improved the dynamic numerical precision for various values in the account detail dialog on mobile
+- Improved the dynamic numerical precision for various values in the holding detail dialog on mobile
+- Improved the account name display in the activities table
+- Optimized the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol` by improving the processing of the historical market data
+
+### Fixed
+
+- Fixed an issue in the import dividends dialog
+- Fixed an issue where certain symbols were incorrectly identified as currencies in various data providers
+- Fixed the last request date in the users table of the admin control panel
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.9.0
 
 ## Ghostfolio 3.9.0 Release Notes
