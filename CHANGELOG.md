@@ -1,3 +1,38 @@
+# 3.9.0
+
+## Ghostfolio 3.9.0 Release Notes
+
+### Added
+
+- Extended the _Public API_ with the endpoint to update the asset profile data (`PATCH api/v1/asset-profiles/:dataSource/:symbol`) (experimental)
+- Added support for a dedicated _OpenRouter_ model for the `web_fetch` tool in the `FetchService`
+
+### Changed
+
+- Prefilled the form in the account balance management with the current cash balance
+- Disabled the selection of future dates in the account balance management
+- Grouped commodities and cryptocurrencies into the unknown bucket of the allocations by continent, country, currency, market and sector charts on the allocations page
+- Moved the support for specific calendar year date ranges (`2025`, `2024`, `2023`, etc.) in the assistant from experimental to general availability
+- Migrated various components from `NgStyle` to style bindings
+- Improved the language localization for Korean (`ko`)
+
+### Fixed
+
+- Grouped activities without an account into the unknown bucket of the allocations by account and platform charts on the allocations page
+
+### Special Thanks
+
+- @battdir
+- @DavidReque
+- @dtslvr
+- @Sjohn21
+- @x52-dev
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.8.0
 
 ## Ghostfolio 3.8.0 Release Notes
