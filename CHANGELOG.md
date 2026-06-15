@@ -1,3 +1,35 @@
+# 3.11.0
+
+## Ghostfolio 3.11.0 Release Notes
+
+### Added
+
+- Added support for a click handler in the page tabs component
+
+### Changed
+
+- Improved the styling of the tabs across various dialogs
+- Improved the styling of the page tabs component on desktop
+- Enabled the _Bull Dashboard_ tab in the admin control panel (experimental)
+- Migrated the settings dialog to customize the rule thresholds of the _X-ray_ page from `ngModel` to form control
+- Improved the language localization for Spanish (`es`)
+- Upgraded `bull-board` from version `7.1.5` to `7.2.1`
+- Upgraded `date-fns` from version `4.1.0` to `4.4.0`
+
+### Fixed
+
+- Improved the loading state when customizing the rule thresholds on the _X-ray_ page
+
+### Special Thanks
+
+- @dtslvr
+- @jhernaezayuso
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.10.0
 
 ## Ghostfolio 3.10.0 Release Notes
