@@ -1,3 +1,37 @@
+# 3.16.0
+
+## Ghostfolio 3.16.0 Release Notes
+
+### Added
+
+- Extended the user account settings with a copy-to-clipboard button for the user id
+- Added pagination to the platform management of the admin control panel
+- Added pagination to the tag management of the admin control panel
+- Extended the asset profile details dialog of the admin control panel with a copy-to-clipboard button for the ISIN number
+- Extended the asset profile details dialog of the admin control panel with a copy-to-clipboard button for the symbol
+
+### Changed
+
+- Improved the throughput of the market data gathering queue by applying the rate limit per data source
+- Decreased the rate limiter duration of the market data gathering queue jobs from 4 to 3 seconds
+- Removed the deprecated `SymbolProfile` field from the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol`
+- Upgraded `@simplewebauthn/browser` and `@simplewebauthn/server` from version `13.2.2` to `13.3`
+
+### Fixed
+
+- Fixed an issue with hourly market data updates not refreshing prices for asset profiles with `MANUAL` data source
+- Fixed an issue with the log context formatting in the performance logging service
+
+### Special Thanks
+
+- @AkashNegi1
+- @dtslvr
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.15.1
 
 ## Ghostfolio 3.15.1 Release Notes
