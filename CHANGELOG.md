@@ -1,3 +1,29 @@
+# 3.17.0
+
+## Ghostfolio 3.17.0 Release Notes
+
+### Added
+
+- Added `zod` as a root dependency to resolve peer dependency warnings
+
+### Changed
+
+- Improved the error message styling in the import activities dialog
+- Improved the grantee display in the access table to share the portfolio
+- Improved the country mapping for data providers
+- Upgraded `bull-board` from version `7.2.1` to `8.0.1`
+- Upgraded `Nx` from version `22.7.5` to `23.0.1`
+- Upgraded `prettier` from version `3.8.3` to `3.8.4`
+
+### Fixed
+
+- Improved the table headers’ alignment in the queue jobs table of the admin control panel
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.16.0
 
 ## Ghostfolio 3.16.0 Release Notes
