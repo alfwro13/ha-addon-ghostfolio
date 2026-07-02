@@ -1,3 +1,41 @@
+# 3.19.0
+
+## Ghostfolio 3.19.0 Release Notes
+
+### Added
+
+- Added support for routing outgoing requests through a per-domain proxy via the `PROXY_ROUTES` setting in the `FetchService`
+- Added `@prisma/config` as a development dependency used by the _Prisma Configuration File_
+
+### Changed
+
+- Updated the _Privacy Policy_
+- Updated the _Terms of Service_
+- Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/activities` endpoint
+- Improved the language localization for German (`de`)
+- Improved the language localization for Japanese (`ja`)
+- Upgraded `@ionic/angular` from version `8.8.5` to `8.8.12`
+- Upgraded `nestjs` from version `11.1.21` to `11.1.27`
+
+### Fixed
+
+- Fixed the validation of the data source field of an asset profile with market data
+- Fixed a recurring issue where single-value fields were incorrectly validated as arrays in various endpoints
+
+### Special Thanks
+
+- @Aftab3008
+- @AkashNegi1
+- @dtslvr
+- @KenTandrian
+- @SeineEloquenz
+- @slagiewka
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.18.0
 
 ## Ghostfolio 3.18.0 Release Notes
