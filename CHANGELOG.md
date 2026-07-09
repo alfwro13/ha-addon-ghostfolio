@@ -1,3 +1,45 @@
+# 3.22.0
+
+## Ghostfolio 3.22.0 Release Notes
+
+### Added
+
+- Added support for a copy-to-clipboard action in the alert dialog component
+
+### Changed
+
+- Improved the user account deletion flow in the user settings of the user account page
+- Improved the date formatting of the first activity in the historical market data table of the admin control panel
+- Set the change detection strategy to `OnPush` in the activities page
+- Set the change detection strategy to `OnPush` in the allocations page
+- Set the change detection strategy to `OnPush` in the analysis page
+- Set the change detection strategy to `OnPush` in the portfolio holdings page
+- Set the change detection strategy to `OnPush` in the activities page
+- Set the change detection strategy to `OnPush` in the _FIRE_ page
+- Set the change detection strategy to `OnPush` in the users section of the admin control panel
+- Hardened the endpoint to update a property of the admin control panel by validating the `key` path parameter
+- Renamed the `SymbolProfileOverrides` _Prisma_ data model to `AssetProfileOverrides` while keeping the database table name
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for French (`fr`)
+- Improved the language localization for German (`de`)
+
+### Special Thanks
+
+- @Aftab3008
+- @archit-goyal
+- @Arjun8242
+- @DavidReque
+- @dtslvr
+- @KenTandrian
+- @munzzyy
+- @SlavaDoroshenko
+- @youdie006
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.21.0
 
 ## Ghostfolio 3.21.0 Release Notes
