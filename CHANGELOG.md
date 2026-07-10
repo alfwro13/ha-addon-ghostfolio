@@ -1,3 +1,34 @@
+# 3.23.0
+
+## Ghostfolio 3.23.0 Release Notes
+
+### Changed
+
+- Migrated the deprecated `@nx/webpack:webpack` executor to `@nx/webpack/plugin`
+- Set the change detection strategy to `OnPush` in the about page
+- Set the change detection strategy to `OnPush` in the admin control panel
+- Set the change detection strategy to `OnPush` in the blog page components
+- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) page
+- Set the change detection strategy to `OnPush` in the home page
+- Set the change detection strategy to `OnPush` in the markets overview
+- Set the change detection strategy to `OnPush` in the resources page
+- Set the change detection strategy to `OnPush` in the user account page
+- Set the change detection strategy to `OnPush` in the _Zen Mode_
+- Improved the language localization for Chinese (`zh`)
+- Improved the language localization for German (`de`)
+
+### Special Thanks
+
+- @Arjun8242
+- @dtslvr
+- @KenTandrian
+- @qiukui666
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.22.0
 
 ## Ghostfolio 3.22.0 Release Notes
