@@ -1,3 +1,29 @@
+# 3.24.0
+
+## Ghostfolio 3.24.0 Release Notes
+
+### Added
+
+- Exposed the `DATA_SOURCE_FEAR_AND_GREED_INDEX_STOCKS` environment variable to set the data source of the _Fear & Greed Index_ (market mood)
+- Exposed the `ENABLE_FEATURE_RATE_LIMITING` environment variable to control rate limiting for authentication and sign-up endpoints
+- Exposed the `TRUST_PROXY` environment variable to determine the client IP address when running behind a reverse proxy
+
+### Changed
+
+- Rounded the value of the _Fear & Greed Index_ (market mood)
+- Improved the language localization for Korean (`ko`)
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @moduvoice
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.23.0
 
 ## Ghostfolio 3.23.0 Release Notes
