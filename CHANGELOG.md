@@ -1,3 +1,40 @@
+# 3.27.0
+
+## Ghostfolio 3.27.0 Release Notes
+
+### Changed
+
+- Hardened the validation of the URL in the logo endpoint
+- Set the change detection strategy to `OnPush` in the about pages
+- Set the change detection strategy to `OnPush` in the accounts page
+- Set the change detection strategy to `OnPush` in the demo page
+- Set the change detection strategy to `OnPush` in the features page
+- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) pages
+- Set the change detection strategy to `OnPush` in the landing page
+- Set the change detection strategy to `OnPush` in the markets page
+- Set the change detection strategy to `OnPush` in the _Open Startup_ (`/open`) page
+- Set the change detection strategy to `OnPush` in the pricing page
+- Set the change detection strategy to `OnPush` in the public page
+- Set the change detection strategy to `OnPush` in the registration page
+- Set the change detection strategy to `OnPush` in the resources pages
+
+### Fixed
+
+- Fixed an issue where the symbol was not selected when cloning an activity
+- Resolved a startup error in data gathering caused by uninitialized data provider mappings
+- Improved the error handling in the `HtmlTemplateMiddleware`
+- Improved the error handling in the get quotes functionality of the _Financial Modeling Prep_ service
+
+### Special thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.26.0
 
 ## Ghostfolio 3.26.0 Release Notes
