@@ -1,3 +1,28 @@
+# 3.31.0
+
+## Ghostfolio 3.31.0 Release Notes
+
+### Changed
+
+- Removed the deprecated `SymbolProfile` field from the activity interface
+- Refactored the language redirect of the root path from the static file serving configuration to a dedicated middleware
+- Upgraded `yahoo-finance2` from version `3.15.4` to `4.0.0`
+
+### Fixed
+
+- Fixed the `RangeNotSatisfiableError` for requests with a `Range` header to the root path caused by the empty `index.html` placeholder
+- Fixed the unresolved template literal in the page title while the app is loading from the service worker cache
+
+### Special Thanks
+
+- @dtslvr
+- @gadicc
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.29.0
 
 ## Ghostfolio 3.29.0 Release Notes
