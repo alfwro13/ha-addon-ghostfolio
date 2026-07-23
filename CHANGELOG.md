@@ -1,3 +1,22 @@
+# 3.32.0
+
+## Ghostfolio 3.32.0 Release Notes
+
+### Changed
+
+- Upgraded `chartjs-chart-treemap` from version `3.1.0` to `4.2.0`
+
+### Fixed
+
+- Skipped opening the holding detail dialog for cash positions on the allocations page, the analysis page and the portfolio holdings page
+- Resolved an exception in the `GET api/v1/portfolio/holding/:dataSource/:symbol` endpoint for cash positions
+- Improved the error handling in the access endpoints (`POST` and `PUT`) to return `400 Bad Request` when granting access to a non-existent user
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.31.0
 
 ## Ghostfolio 3.31.0 Release Notes
