@@ -1,3 +1,35 @@
+# 3.33.0
+
+## Ghostfolio 3.33.0 Release Notes
+
+### Added
+
+- Added the stack trace logging for `MaxListenersExceededWarning` occurrences
+
+### Changed
+
+- Moved the support to create custom tags from experimental to general availability
+- Recomputed the portfolio snapshot calculation in the background on a portfolio change
+- Improved the deduplication of the portfolio snapshot calculation jobs by considering the filters
+- Refactored the deprecated animation providers (`provideAnimations()` and `provideNoopAnimations()`)
+- Improved the language localization for German (`de`)
+- Improved the language localization for Polish (`pl`)
+
+### Fixed
+
+- Fixed an issue with the localization in the _FIRE_ page
+- Improved the spacing in the testimonial section on the landing page
+
+### Special Thanks
+
+- @cyptrix12
+- @dtslvr
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.32.0
 
 ## Ghostfolio 3.32.0 Release Notes
