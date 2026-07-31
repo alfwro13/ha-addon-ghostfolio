@@ -1,3 +1,36 @@
+# 3.37.0
+
+## Ghostfolio 3.37.0 Release Notes
+
+### Added
+
+- Added an empty state to the _Fear & Greed Index_ component
+- Added a _Storybook_ story for the _Fear & Greed Index_ component
+
+### Changed
+
+- Moved the tags to the overview tab of the account detail dialog (experimental)
+- Moved the tags to the overview tab of the holding detail dialog
+- Consolidated the markets pages into a single route where the _Fear & Greed Index_ is controlled by permission
+- Refactored the line chart components to share the common chart configuration
+- Improved the language localization for Spanish (`es`)
+- Improved the language localization for Ukrainian (`uk`)
+
+### Fixed
+
+- Ignored future-dated account balances in the portfolio calculation
+
+### Special Thanks
+
+- @CoderVJain
+- @dtslvr
+- @santichausis
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.36.0
 
 ## Ghostfolio 3.36.0 Release Notes
