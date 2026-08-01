@@ -1,3 +1,25 @@
+# 3.39.0
+
+## Ghostfolio 3.39.0 Release Notes
+
+### Changed
+
+- Harmonized the data format of the export functionality
+- Removed the deprecated `firstOrderDate` attribute from the `GET api/v2/portfolio/performance` endpoint response
+- Removed the deprecated `isExcluded` attribute of the account in favor of the _Exclude from Analysis_ tag including a data migration
+- Improved the language localization for German (`de`)
+- Upgraded `prisma` from version `7.8.0` to `7.9.1`
+
+### Fixed
+
+- Fixed the scroll behavior of the page content behind an open dialog
+- Fixed the export functionality to only include the accounts of the exported activities if a filter is applied
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.38.0
 
 ## Ghostfolio 3.38.0 Release Notes
