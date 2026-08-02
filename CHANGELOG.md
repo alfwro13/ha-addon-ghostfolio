@@ -1,3 +1,29 @@
+# 3.40.0
+
+## Ghostfolio 3.40.0 Release Notes
+
+### Changed
+
+- Improved the style of the read-only tags in the tags selector component
+- Improved the language localization for Chinese (`zh`)
+- Upgraded `nestjs` from version `11.1.27` to `11.1.28`
+
+### Fixed
+
+- Fixed the handling of the _Exclude from Analysis_ tag in the activities table
+- Fixed the persistence of an empty comment in the create or update account dialog
+- Resolved a validation error caused by empty strings in the asset profile details dialog of the admin control panel
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.39.0
 
 ## Ghostfolio 3.39.0 Release Notes
