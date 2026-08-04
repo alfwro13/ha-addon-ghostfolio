@@ -1,3 +1,31 @@
+# 3.41.0
+
+## Ghostfolio 3.41.0 Release Notes
+
+### Added
+
+- Added support for the account platforms in the activities import
+- Added the database model and endpoints to manage the stock splits of an asset profile (experimental)
+
+### Changed
+
+- Improved the usability of the admin control panel by eliminating the page reload on changing a setting
+- Improved the usability of the admin control panel by eliminating the page reload on deleting an asset profile
+- Improved the usability of the admin control panel by eliminating the page reload on flushing the cache
+- Improved the usability of the admin control panel by eliminating the page reload on gathering historical market data
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Fixed the loading state in the user detail dialog of the admin control panel’s users section
+- Fixed a race condition where the portfolio snapshot computation was completed before its result had been cached, causing a redundant recomputation
+- Fixed an endless loop in the portfolio snapshot computation if the computed result could not be read from the cache
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.40.0
 
 ## Ghostfolio 3.40.0 Release Notes
