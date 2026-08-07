@@ -1,4 +1,4 @@
-ARG ghostfolio_version="3.43.0"
+ARG ghostfolio_version="3.44.0"
 ARG BUILD_FROM="ghostfolio/ghostfolio:${ghostfolio_version}"
 FROM $BUILD_FROM
 
