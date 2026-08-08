@@ -1,3 +1,32 @@
+# 3.45.0
+
+## Ghostfolio 3.45.0 Release Notes
+
+### Added
+
+- Added a _Coverage_ rule to the _Emergency Fund_ section on the _X-ray_ page
+
+### Changed
+
+- Aligned the x-axis of the dividend and investment timeline charts on the analysis page
+- Improved the check for duplicates in the preview step of the activities import (regardless of the account)
+- Improved the check for duplicates in the preview step of the import dividends dialog (regardless of the account)
+- Extended the activities import to reuse an existing account of the user by name and currency
+- Extended the activities import to resolve an ISIN to the symbol of the data provider
+- Improved the style of the placeholder in the entity logo component
+- Migrated the create, detail and edit account dialogs to dedicated routes
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Fixed the check for duplicates in the preview step of the activities import for activities without a comment
+- Fixed the holdings mock data in the _Storybook_ story of the portfolio filter form component
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.44.0
 
 ## Ghostfolio 3.44.0 Release Notes
