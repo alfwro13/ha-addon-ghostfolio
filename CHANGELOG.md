@@ -1,3 +1,24 @@
+# 3.47.0
+
+## Ghostfolio 3.47.0 Release Notes
+
+### Changed
+
+- Extended the toggle component to support a disabled state
+- Extended the toggle component to support icons
+- Reused the toggle component on the portfolio holdings page
+- Reused the currency selector component in the user account settings
+
+### Fixed
+
+- Fixed the handling of the disabled state in the currency selector and symbol autocomplete components
+- Fixed the restoration of the current selection in the currency selector component when leaving the field without picking an option
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.46.0
 
 ## Ghostfolio 3.46.0 Release Notes
