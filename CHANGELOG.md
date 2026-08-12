@@ -1,3 +1,23 @@
+# 3.49.0
+
+## Ghostfolio 3.49.0 Release Notes
+
+### Changed
+
+- Improved the wording of the _X-ray_ page to use a neutral form
+- Improved the style of the disabled base currency in the user account settings
+- Moved the support to clone an activity in the account detail dialog from experimental to general availability
+- Moved the support to clone an activity in the holding detail dialog from experimental to general availability
+- Moved the support to edit an activity in the account detail dialog from experimental to general availability
+- Moved the support to edit an activity in the holding detail dialog from experimental to general availability
+- Removed the deprecated `isDraft` attribute of the activity in favor of the _Draft_ tag
+- Improved the language localization for German (`de`)
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.48.1
 
 ## Ghostfolio 3.48.1 Release Notes
