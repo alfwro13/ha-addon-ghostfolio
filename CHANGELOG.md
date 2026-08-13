@@ -1,3 +1,24 @@
+# 3.50.0
+
+## Ghostfolio 3.50.0 Release Notes
+
+### Changed
+
+- Refreshed the cryptocurrencies list
+- Upgraded `countries-list` from version `3.4.0` to `3.4.1`
+
+### Fixed
+
+- Fixed the performance of closed positions in the portfolio calculator caused by a rounding remainder in the investment
+- Fixed the missing mapping for Turkey in the country weightings of the _Financial Modeling Prep_ service
+- Fixed the missing mapping for Czech Republic and Turkey in the data enhancer for asset profile data via _Yahoo Finance_
+- Resolved an error when fetching dividends from _Yahoo Finance_ for date ranges without events
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.49.0
 
 ## Ghostfolio 3.49.0 Release Notes
