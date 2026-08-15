@@ -1,3 +1,30 @@
+# 3.51.0
+
+## Ghostfolio 3.51.0 Release Notes
+
+### Changed
+
+- Simplified the error log output of the data provider and queue services by omitting the stack trace
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Fixed the cash balance update related to activities in a custom currency
+- Fixed the empty historical market data of the asset profile dialog of the admin control panel for asset profiles without activities
+- Fixed the missing mapping for Czech Republic in the country weightings of the _Financial Modeling Prep_ service
+- Fixed the missing mapping for Macau in the data enhancer for asset profile data via _Yahoo Finance_
+- Fixed the outdated exchange rates of currency pairs which are calculated indirectly via the base currency
+
+### Special Thanks
+
+- @dtslvr
+- @vicbentu
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.50.0
 
 ## Ghostfolio 3.50.0 Release Notes
