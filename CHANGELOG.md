@@ -1,3 +1,39 @@
+# 3.52.0
+
+## Ghostfolio 3.52.0 Release Notes
+
+### Added
+
+- Added the business logic and tests for stock splits of an asset profile (experimental)
+- Added the scopes to the access
+- Added an index for `symbolProfileId` to the order database table
+
+### Changed
+
+- Restricted the creation of tags to unique names in the tags selector component
+- Changed the redaction of the monetary values in impersonation mode to be based on the scopes of the access
+- Deprecated the `permissions` attribute of the access in favor of the scopes
+- Extended the `GET api/v1/access` endpoint by the scopes
+- Extended the `GET api/v1/user` endpoint by the scopes
+- Improved the performance of deleting activities by loading only the required data
+
+### Fixed
+
+- Fixed the missing currency conversion of the dividends on the analysis page
+- Fixed the missing error state in the watchlist
+- Fixed the missing loading indicator in the benchmarks of the markets overview
+- Fixed the incorrect error log output when deleting activities
+
+### Special Thanks
+
+- @DavidReque
+- @dtslvr
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.51.0
 
 ## Ghostfolio 3.51.0 Release Notes
