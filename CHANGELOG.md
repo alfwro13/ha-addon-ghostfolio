@@ -1,3 +1,29 @@
+# 3.57.0
+
+## Ghostfolio 3.57.0 Release Notes
+
+### Added
+
+- Added the permission to manage data to the grant access dialog and to the access table to share the portfolio (experimental)
+
+### Changed
+
+- Extended the account selector options to include the platform and currency
+- Improved the error handling of the `AuthGuard`
+- Improved the language localization for German (`de`)
+- Improved the language localization for Japanese (`ja`)
+- Upgraded `yahoo-finance2` from version `4.0.0` to `4.0.2`
+
+### Special Thanks
+
+- @dtslvr
+- @nyxst4ck
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.56.0
 
 ## Ghostfolio 3.56.0 Release Notes
