@@ -1,3 +1,24 @@
+# 3.56.0
+
+## Ghostfolio 3.56.0 Release Notes
+
+### Changed
+
+- Improved the sorting to be case-insensitive in the account selector component
+- Refactored the services to use the `@Service()` decorator of _Angular_
+- Removed the deprecated `permissions` attribute of the access in favor of the scopes
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @RaghavShubham
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.55.0
 
 ## Ghostfolio 3.55.0 Release Notes
