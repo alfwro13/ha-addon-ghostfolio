@@ -1,3 +1,32 @@
+# 3.66.0
+
+## Ghostfolio 3.66.0 Release Notes
+
+### Changed
+
+- Moved the details of the granted access from the table to the dialog on the access page (experimental)
+- Restricted the _Restricted view and manage_ permission of the access to share the portfolio to the Model Context Protocol (MCP) (experimental)
+- Migrated the transfer cash balance dialog to a dedicated route
+- Improved the language localization for Italian (`it`)
+- Upgraded `@rekog/mcp-nest` from version `2.0.0` to `2.0.2`
+- Upgraded `prisma` from version `7.9.1` to `7.10.0`
+
+### Fixed
+
+- Fixed the loading state of the accounts table on the accounts page
+- Fixed the loading state of the holdings table on the portfolio holdings page
+
+### Special Thanks
+
+- @dtslvr
+- @Lyndros
+- @Pial-Al-Mamun
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.65.0
 
 ## Ghostfolio 3.65.0 Release Notes
