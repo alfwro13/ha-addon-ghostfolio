@@ -1,3 +1,21 @@
+# 3.68.0
+
+## Ghostfolio 3.68.0 Release Notes
+
+### Added
+
+- Added a simplified mode to the holdings table component
+
+### Changed
+
+- Made the details of holdings excluded from analysis accessible via the activities table
+- Migrated the asset profile dialogs of the market data management in the admin control panel to dedicated routes
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.67.1
 
 ## Ghostfolio 3.67.1 Release Notes
