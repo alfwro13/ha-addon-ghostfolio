@@ -1,3 +1,41 @@
+# 3.70.1
+
+## Ghostfolio 3.70.1 Release Notes
+
+### Added
+
+- Added the holdings table to the overview tab of the home page on desktop (experimental)
+- Added a tool to search for asset profiles to the server of the Model Context Protocol (MCP) (experimental)
+
+### Changed
+
+- Improved the style of the activity type filter on the activities page (experimental)
+- Improved the style of the no activities info component
+- Improved the style of the selector in the benchmark comparator
+- Improved the responsive layout of the holdings table in simplified mode
+- Improved the language localization for Chinese (`zh`)
+- Improved the language localization for German (`de`)
+- Upgraded `@codewithdan/observable-store` from version `2.2.15` to `3.0.0`
+- Upgraded `bull-board` from version `9.5.0` to `9.8.0`
+- Upgraded `papaparse` from version `5.5.3` to `5.7.0`
+- Upgraded `zone.js` from version `0.16.2` to `0.16.3`
+
+### Fixed
+
+- Hardened the authentication with _OpenID Connect_ (`OIDC`) (experimental)
+
+### Special Thanks
+
+- @asyncAndChill
+- @dtslvr
+- @KenTandrian
+- @shreyy27
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.69.0
 
 ## Ghostfolio 3.69.0 Release Notes
