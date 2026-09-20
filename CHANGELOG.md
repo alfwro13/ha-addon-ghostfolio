@@ -1,3 +1,26 @@
+# 3.72.0
+
+## Ghostfolio 3.72.0 Release Notes
+
+### Added
+
+- Added a tool to get the watchlist to the server of the Model Context Protocol (MCP) (experimental)
+
+### Changed
+
+- Extended the cache key of the portfolio snapshot by the performance calculation type
+- Hardened the validation of the device id in the biometric authentication
+- Upgraded `stripe` from version `22.5.0` to `22.6.2`
+
+### Fixed
+
+- Fixed the net performance percentage of date ranges in the portfolio performance calculation by including the gross performance at the start date
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.71.0
 
 ## Ghostfolio 3.71.0 Release Notes
