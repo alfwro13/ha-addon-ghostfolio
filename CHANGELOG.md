@@ -1,3 +1,34 @@
+# 3.74.0
+
+## Ghostfolio 3.74.0 Release Notes
+
+### Added
+
+- Added the dividend performance to the analysis page (experimental)
+
+### Changed
+
+- Simplified the portfolio summary by hiding the currency on mobile
+- Improved the performance of the logo endpoints by enabling the browser cache
+- Improved the language localization for Catalan (`ca`)
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Fixed the wrapping of the name column in the accounts table component on mobile
+- Fixed the sorting of the watchlist for asset profiles without a name
+
+### Special thanks
+
+- @Ahson-Shaikh
+- @dtslvr
+- @Nfreakz
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.72.0
 
 ## Ghostfolio 3.72.0 Release Notes
