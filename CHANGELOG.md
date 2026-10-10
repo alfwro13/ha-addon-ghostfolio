@@ -1,3 +1,38 @@
+# 3.82.0
+
+## Ghostfolio 3.82.0 Release Notes
+
+### Added
+
+- Extended the content of the _General_ section by information about the import of activities from _Interactive Brokers_ on the Frequently Asked Questions (FAQ) page
+
+### Changed
+
+- Extended the user account deletion flow in the user settings of the user account page to users without a _Security Token_ within 14 days after the registration
+- Improved the _Storybook_ stories of the account selector, accounts table, activities table and holdings table components
+- Removed an unnecessary index from the market data database table
+- Refreshed the cryptocurrencies list
+- Improved the language localization for Spanish (`es`)
+
+### Fixed
+
+- Fixed the missing list numbers in the top and bottom holdings on the analysis page in Safari
+- Fixed the missing first data point in the portfolio evolution chart on the analysis page
+- Fixed the end date of calendar year date ranges in the portfolio performance calculation for instances in time zones with a negative UTC offset
+- Fixed the missing mapping for Korea in the country weightings of the _Financial Modeling Prep_ service
+
+### Special Thanks
+
+- @dtslvr
+- @jellyfishing2346
+- @KenTandrian
+- @Lyndros
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.81.0
 
 ## Ghostfolio 3.81.0 Release Notes
