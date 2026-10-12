@@ -1,3 +1,40 @@
+# 3.84.2
+
+## Ghostfolio 3.84.2 Release Notes
+
+### Added
+
+- Added the endpoint to read the activities of a CSV, JPEG, PDF or PNG file with _Ghostfolio AI_ (`POST api/v1/ai/activities`) (experimental)
+
+### Changed
+
+- Simplified the portfolio performance on the overview tab of the home page by hiding the currency on mobile
+- Extended the user detail dialog in the users section of the admin control panel to include the client of the last request
+- Updated the _Privacy Policy_
+- Extended the import of activities to support CSV files of other brokers, images and PDF files with _Ghostfolio AI_ (experimental)
+- Extended the access to share the portfolio with the Model Context Protocol (MCP) to support the _View_ and the _View and manage_ permissions (experimental)
+- Improved the performance of getting the historical market data by selecting only the required columns
+- Improved the language localization for German (`de`)
+
+### Fixed
+
+- Fixed the _Copy AI prompt to clipboard_ actions on the analysis page in impersonation mode to be based on the impersonated user (experimental)
+- Fixed the start date of the date ranges for instances in time zones with a negative UTC offset
+- Fixed the dates of the benchmark in the benchmark comparator on the analysis page for instances in time zones with a negative UTC offset
+- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity on the accounts page and the allocations page
+- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity in the server of the Model Context Protocol (MCP) (experimental)
+- Fixed the missing check of the inactive role and of the daily request limit in the server of the Model Context Protocol (MCP) (experimental)
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.82.0
 
 ## Ghostfolio 3.82.0 Release Notes
