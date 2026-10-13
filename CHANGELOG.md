@@ -1,3 +1,29 @@
+# 3.85.0
+
+## Ghostfolio 3.85.0 Release Notes
+
+### Added
+
+- Added an option to enable _Ghostfolio AI_ in the user settings of the user account page (experimental)
+- Added an icon to indicate the client of the last request in the users table of the admin control panel
+
+### Changed
+
+- Removed the deprecated `SymbolProfile` field from the endpoint `POST api/v1/activities`
+- Upgraded `ai` from version `7.0.114` to `7.0.127`
+
+### Fixed
+
+- Fixed the border color of the drop area in the import activities dialog (dark mode)
+- Fixed the start date of the investment timeline chart on the analysis page
+- Fixed the matching of assets and accounts in the import of activities with _Ghostfolio AI_ (experimental)
+- Fixed an issue where the update of an activity could change the asset class and asset sub class of an asset profile which does not belong to the user
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.84.2
 
 ## Ghostfolio 3.84.2 Release Notes
