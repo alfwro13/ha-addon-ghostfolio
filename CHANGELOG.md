@@ -1,3 +1,38 @@
+# 3.87.0
+
+## Ghostfolio 3.87.0 Release Notes
+
+### Added
+
+- Added a _Storybook_ story for the investment chart component
+
+### Changed
+
+- Highlighted the negative values in the performance timeline chart on the analysis page (experimental)
+- Moved the investment chart component to `@ghostfolio/ui`
+- Improved the matching of assets in the import of activities with _Ghostfolio AI_ to prefer the holdings of the user (experimental)
+- Extended the holdings table by the ISIN in the _Copy AI prompt to clipboard_ actions on the analysis page and in the tool to get the portfolio of the server of the Model Context Protocol (MCP) (experimental)
+- Hardened the validation of the date in the endpoint to create an account balance
+- Improved the language localization for German (`de`)
+- Upgraded `bootstrap` from version `4.6.2` to `5.3.8`
+- Upgraded `stripe` from version `22.6.2` to `23.0.0`
+
+### Fixed
+
+- Fixed an exception in the authentication interceptor when the time zone of the browser is not available
+- Fixed the missing `userId` in the unique constraint of the `AccountBalance` database schema
+
+### Special Thanks
+
+- @Asymtode712
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.86.0
 
 ## Ghostfolio 3.86.0 Release Notes
