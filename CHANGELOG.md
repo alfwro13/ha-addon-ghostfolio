@@ -1,3 +1,27 @@
+# 3.92.0
+
+## Ghostfolio 3.92.0 Release Notes
+
+### Changed
+
+- Extended the creation and the import of activities to support the asset profiles of a premium data provider which the user already has
+- Improved the performance of the historical market data table of the admin control panel by counting the market data per asset profile
+- Improved the performance of the historical market data table of the admin control panel by querying subscription usage in a single database query
+- Improved the matching of assets in the import of activities with _Ghostfolio AI_ to include closed positions and excluded accounts (experimental)
+- Hardened the `POST api/v1/import` endpoint by hiding internal error messages
+- Upgraded `Nx` from version `23.2.1` to `23.3.1`
+- Upgraded `zod` from version `4.6.5` to `4.6.7`
+
+### Fixed
+
+- Fixed the width of the content in the overview tab of the account detail dialog, the asset profile details dialog of the admin control panel and the holding detail dialog
+- Fixed the state of the market data in the historical market data gathering endpoint for a specific date
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.91.0
 
 ## Ghostfolio 3.91.0 Release Notes
