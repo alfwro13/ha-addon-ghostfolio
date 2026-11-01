@@ -1,3 +1,32 @@
+# 3.96.0
+
+## Ghostfolio 3.96.0 Release Notes
+
+### Changed
+
+- Extended the sectors mapping in the data enhancer for asset profile data via _Trackinsight_
+- Improved the logging of the `web_fetch` tool in the `FetchService`
+- Improved the validation of the `WEB_FETCH_ROUTES` setting in the `FetchService`
+- Improved the validation of the response of the `web_fetch` tool in the `FetchService`
+- Deprecated the `api/v1/admin/user`, `api/v1/user/:id` and `api/v1/user/:id/access-token` endpoints in favor of the `api/v1/users` endpoints
+- Improved the language localization for German (`de`)
+- Upgraded `chart.js` from version `4.5.1` to `4.6.1`
+
+### Fixed
+
+- Fixed the overwrite of `countries`, `holdings` and `sectors` with empty values in the data gathering of asset profiles
+- Fixed the validation of the responses in the data enhancer for asset profile data via _Trackinsight_
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.94.0
 
 ## Ghostfolio 3.94.0 Release Notes
