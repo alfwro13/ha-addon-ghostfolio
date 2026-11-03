@@ -1,3 +1,27 @@
+# 3.97.0
+
+## Ghostfolio 3.97.0 Release Notes
+
+### Changed
+
+- Improved the content of the pricing page
+- Improved the language localization for German (`de`)
+- Upgraded `stripe` from version `23.0.0` to `23.0.1`
+
+### Fixed
+
+- Fixed the value of zero in the portfolio performance for date ranges starting after the end of an expired portfolio snapshot
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.96.0
 
 ## Ghostfolio 3.96.0 Release Notes
