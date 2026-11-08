@@ -1,3 +1,34 @@
+# 3.99.0
+
+## Ghostfolio 3.99.0 Release Notes
+
+### Added
+
+- Added `comment` to the `AccountBalance` database schema as a preparation for notes in the account balances
+- Added the discovery endpoints of OAuth 2.1 to the server of the Model Context Protocol (MCP) (experimental)
+
+### Changed
+
+- Improved the _Storybook_ stories of the accounts table component
+- Improved the _Storybook_ stories of the activities table component
+- Changed the build executor of the client from `@nx/angular:browser-esbuild` to `@nx/angular:application`
+- Improved the language localization for German (`de`)
+- Improved the language localization for Polish (`pl`)
+- Improved the language localization for Spanish (`es`)
+- Upgraded `ngx-skeleton-loader` from version `13.0.0` to `14.0.0`
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @kodzonko
+- @Lyndros
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.98.0
 
 ## Ghostfolio 3.98.0 Release Notes
