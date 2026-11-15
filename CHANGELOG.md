@@ -1,3 +1,28 @@
+# 3.100.0
+
+## Ghostfolio 3.100.0 Release Notes
+
+### Changed
+
+- Upgraded the `Node.js` engine from version `>=22.23.4` to `>=22.23.5` (`package.json`)
+- Upgraded `@modelcontextprotocol/core` and `@modelcontextprotocol/server` from version `2.3.1` to `2.4.0`
+- Upgraded `@modelcontextprotocol/node` from version `2.1.1` to `2.1.2`
+- Upgraded `@rekog/mcp-nest` from version `2.0.8` to `2.0.9`
+- Upgraded `dotenv` from version `18.0.3` to `18.0.9`
+- Upgraded `stripe` from version `23.0.1` to `23.1.0`
+- Upgraded `undici` from version `8.12.3` to `8.12.4`
+
+### Special Thanks
+
+- @dtslvr
+- @KenTandrian
+- @ZainnQureshii
+
+---
+*This release was automatically generated based on the official Ghostfolio update.*
+
+---
+
 # 3.99.0
 
 ## Ghostfolio 3.99.0 Release Notes
